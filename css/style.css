@@ -1,0 +1,365 @@
+body {
+	overflow: hidden;
+	margin: 0;
+}
+
+canvas {
+	position:fixed;
+	top:0;
+	left:0;
+	background: linear-gradient(0deg,rgb(0,0,0),rgb(0,0,0));
+	background-size: cover;
+}
+
+p,h1,h2,h3 {
+	margin: 0;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin: 0;
+	scroll-snap-type: y mandatory;
+}
+
+.container::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.container>div {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	scroll-snap-align: start;
+}
+
+.container > div:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.container > div:nth-child(1) > div:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	width: 500px;
+	height: 300px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	position: relative;
+	box-shadow: 0 0 50px -15px rgba(255,255,255,1);
+	border-radius: 30px;
+}
+
+.container > div:nth-child(1) > div:nth-child(1) > h1 {
+	font-size: 4em;
+}
+
+.container > div:nth-child(1) > div:nth-child(1) > h1 {}
+
+.container > div:nth-child(1) > div:nth-child(2) > p {
+	margin-bottom:10px;
+	margin-top:0;
+	color: white;
+}
+
+.container > div:nth-child(1) > div:nth-child(2) {
+	position: absolute;
+	bottom: 10px;
+}
+
+.container > div:nth-child(1) > a {
+	text-decoration: none;
+	color: rgb(200,200,200);
+}
+
+.container > div:nth-child(1) > a:hover {
+	text-decoration: none;
+	color: rgb(150,150,150);
+}
+
+.container > div:nth-child(1) > div:nth-child(1) > span {
+	display:block;
+	height:1px;
+	width:90%;
+	border-top: 1px solid #ccc
+}
+
+.container > div:nth-child(2) {
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.container > div:nth-child(2) > div:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding-left: 50px;
+	grid-column-start:1;
+	grid-column-end:6;
+	grid-row-start:1;
+	grid-row-end:3;
+}
+
+.container > div:nth-child(2) > div:nth-child(2) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	grid-column-start:6;
+	grid-column-end:10;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+.container > div:nth-child(2) > div:nth-child(3) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	grid-column-start:6;
+	grid-column-end:10;
+	grid-row-start:2;
+	grid-row-end:3;
+}
+
+.container > div:nth-child(2) > div:nth-child(2) > div {
+	width: 300px;
+	height: 200px;
+	background: rgba(0,0,0,0.6);
+	color:white;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align:center;
+}
+
+.container > div:nth-child(2) > div:nth-child(3) > div {
+	width: 300px;
+	height: 200px;
+	background: rgba(0,0,0,0.6);
+	color:white;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align:center;
+}
+
+.container > div:nth-child(2) > div:nth-child(2) > div > p{
+	font-size: 1.5em;
+	padding: 0 0.75em;
+}
+
+.container > div:nth-child(2) > div:nth-child(3) > div > p{
+	font-size: 1.5em;
+	padding: 0 0.75em;
+}
+
+.button {
+	width:min-content;
+	font-size: 1em !important;
+	text-transform: uppercase !important;
+	border: 2px solid currentColor !important;
+	cursor: pointer !important;
+	padding: 0.25em 1em !important;
+	transition: all 0.1s  ease-out 200ms !important;
+	border-radius: 0.25em !important;
+	text-align: center !important;
+}
+
+.button:hover {
+	color: black !important;
+	background-color: rgba(255,215,47,0.7) !important;
+}
+
+.container > div:nth-child(2) > div:nth-child(1) > p {
+	display: none;
+}
+
+.container > div:nth-child(2) > div:nth-child(1) > span {
+	font-size: 2em;
+	text-transform: uppercase;
+	color: #081d24;
+}
+
+.blocker {
+	position:absolute;
+	z-index:998;
+	background-color: rgba(0,0,0,0.7);
+	width: 100vw;
+	height: 120vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.blocker > img {
+	width: 60%;
+	height: auto;
+	border: 10px solid white;
+}
+
+img.galleryable {
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+.container > div:nth-child(3) {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.container > div:nth-child(3) > div:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	align-items:flex-start;
+	justify-content: center;
+	padding-left:50px;
+}
+
+.container > div:nth-child(3) > div:nth-child(1) > h1 {
+	font-size: 4em;
+	color: #e0e3e9;
+	margin:50px 0;
+}
+
+.container > div:nth-child(3) > div:nth-child(1) > p {
+	font-size: 1.5em;
+	color: #111519;
+	padding: 15px;
+	background-color: rgba(224,227,233,0.4);
+	max-width: 80%;
+}
+
+.container > div:nth-child(3) > div:nth-child(2) {
+	display: flex;
+    flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 10px;
+	padding: 50px 0;
+	
+}
+
+.container > div:nth-child(3) > div:nth-child(2) > img {
+	width: 80%;
+	height: auto;
+}
+
+.container > div:nth-child(4) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container > div:nth-child(4) > div {
+	padding: 20px;
+	margin: 0 50px;
+	width: 300px;
+	max-height: 80vh;
+	background: rgba(0,0,0,0.6);
+	color: white;
+	border-radius: 20px;
+	transition: all 0.1s  ease-out 200ms;
+	border: 0px solid rgba(0,0,0,0);
+}
+
+.container > div:nth-child(4) > div:hover {
+	background: rgba(255,255,255,0.6);
+	color: black;
+	border: 10px solid rgba(255,255,255,0);
+}
+
+.container > div:nth-child(4) > div  li {
+	color: #ffdc4d;
+	transition: all 0.1s  ease-out 200ms;
+}
+
+.container > div:nth-child(4) > div:hover  li {
+	color: #212c79;
+
+}
+
+.container > div:nth-child(4) > div > .button {
+	color: white;
+	margin-left:45px;
+	text-align:center;
+}
+
+.container > div:nth-child(4) > div:hover > .button {
+	color: black;
+}
+
+.container > div:nth-child(5) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+}
+
+.container > div:nth-child(5) > h1 {
+	font-size: 2em;
+}
+
+.container > div:nth-child(5) > form {
+	border-radius: 30px;
+	background-color:rgba(100,100,100,0.4);
+	padding: 50px;
+	margin: 50px;
+	width: 40vw;
+	height: 40vh;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.container > div:nth-child(5) > form > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container > div:nth-child(5) > form > div:nth-child(1) {
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+.container > div:nth-child(5) > form > div:nth-child(2) {
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+.container > div:nth-child(5) > form > div:nth-child(3) {
+	grid-column-start:1;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+}
+
+.container > div:nth-child(5) > form > div:nth-child(3) > * {
+	padding:30px 0;
+}
